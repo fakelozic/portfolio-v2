@@ -1,8 +1,10 @@
+import { useState } from "react";
+import { LoadingScreen } from "./components/LoadingScreen";
+
 function App() {
+  const [isLoading, setIsLoading] = useState(false);
   return (
-    <>
-      <div className="w-20 h-20">Hellog</div>
-    </>
+    <>{!isLoading && <LoadingScreen onComplete={() => setIsLoading(true)} />}</>
   );
 }
 
